@@ -16,6 +16,13 @@
 		269F84441CF049D700B9D75F /* JXNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F84431CF049D700B9D75F /* JXNavController.m */; };
 		269F84471CF04A1000B9D75F /* JXMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F84461CF04A1000B9D75F /* JXMainController.m */; };
 		269F844A1CF04F0A00B9D75F /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F84491CF04F0A00B9D75F /* UIView+Frame.m */; };
+		269F844D1CF1EF9C00B9D75F /* JXOneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F844C1CF1EF9C00B9D75F /* JXOneController.m */; };
+		269F84501CF1EFA500B9D75F /* JXTwoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F844F1CF1EFA500B9D75F /* JXTwoController.m */; };
+		269F84531CF1EFB100B9D75F /* JXThreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F84521CF1EFB100B9D75F /* JXThreeController.m */; };
+		269F84561CF1EFB800B9D75F /* JXFourController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F84551CF1EFB800B9D75F /* JXFourController.m */; };
+		269F84591CF1EFC500B9D75F /* JXFiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F84581CF1EFC500B9D75F /* JXFiveController.m */; };
+		269F845C1CF1EFCD00B9D75F /* JXSixController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F845B1CF1EFCD00B9D75F /* JXSixController.m */; };
+		269F845F1CF1EFD800B9D75F /* JXSevenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F845E1CF1EFD800B9D75F /* JXSevenController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +62,20 @@
 		269F84461CF04A1000B9D75F /* JXMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMainController.m; sourceTree = "<group>"; };
 		269F84481CF04F0A00B9D75F /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		269F84491CF04F0A00B9D75F /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		269F844B1CF1EF9C00B9D75F /* JXOneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXOneController.h; sourceTree = "<group>"; };
+		269F844C1CF1EF9C00B9D75F /* JXOneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXOneController.m; sourceTree = "<group>"; };
+		269F844E1CF1EFA500B9D75F /* JXTwoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTwoController.h; sourceTree = "<group>"; };
+		269F844F1CF1EFA500B9D75F /* JXTwoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTwoController.m; sourceTree = "<group>"; };
+		269F84511CF1EFB100B9D75F /* JXThreeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXThreeController.h; sourceTree = "<group>"; };
+		269F84521CF1EFB100B9D75F /* JXThreeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXThreeController.m; sourceTree = "<group>"; };
+		269F84541CF1EFB800B9D75F /* JXFourController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXFourController.h; sourceTree = "<group>"; };
+		269F84551CF1EFB800B9D75F /* JXFourController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXFourController.m; sourceTree = "<group>"; };
+		269F84571CF1EFC500B9D75F /* JXFiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXFiveController.h; sourceTree = "<group>"; };
+		269F84581CF1EFC500B9D75F /* JXFiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXFiveController.m; sourceTree = "<group>"; };
+		269F845A1CF1EFCD00B9D75F /* JXSixController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSixController.h; sourceTree = "<group>"; };
+		269F845B1CF1EFCD00B9D75F /* JXSixController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSixController.m; sourceTree = "<group>"; };
+		269F845D1CF1EFD800B9D75F /* JXSevenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSevenController.h; sourceTree = "<group>"; };
+		269F845E1CF1EFD800B9D75F /* JXSevenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSevenController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +132,20 @@
 				269F84431CF049D700B9D75F /* JXNavController.m */,
 				269F84451CF04A1000B9D75F /* JXMainController.h */,
 				269F84461CF04A1000B9D75F /* JXMainController.m */,
+				269F844B1CF1EF9C00B9D75F /* JXOneController.h */,
+				269F844C1CF1EF9C00B9D75F /* JXOneController.m */,
+				269F844E1CF1EFA500B9D75F /* JXTwoController.h */,
+				269F844F1CF1EFA500B9D75F /* JXTwoController.m */,
+				269F84511CF1EFB100B9D75F /* JXThreeController.h */,
+				269F84521CF1EFB100B9D75F /* JXThreeController.m */,
+				269F84541CF1EFB800B9D75F /* JXFourController.h */,
+				269F84551CF1EFB800B9D75F /* JXFourController.m */,
+				269F84571CF1EFC500B9D75F /* JXFiveController.h */,
+				269F84581CF1EFC500B9D75F /* JXFiveController.m */,
+				269F845A1CF1EFCD00B9D75F /* JXSixController.h */,
+				269F845B1CF1EFCD00B9D75F /* JXSixController.m */,
+				269F845D1CF1EFD800B9D75F /* JXSevenController.h */,
+				269F845E1CF1EFD800B9D75F /* JXSevenController.m */,
 				269F84481CF04F0A00B9D75F /* UIView+Frame.h */,
 				269F84491CF04F0A00B9D75F /* UIView+Frame.m */,
 				269F841B1CF0488B00B9D75F /* Assets.xcassets */,
@@ -280,9 +315,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269F844D1CF1EF9C00B9D75F /* JXOneController.m in Sources */,
+				269F84501CF1EFA500B9D75F /* JXTwoController.m in Sources */,
+				269F845C1CF1EFCD00B9D75F /* JXSixController.m in Sources */,
 				269F84471CF04A1000B9D75F /* JXMainController.m in Sources */,
+				269F84591CF1EFC500B9D75F /* JXFiveController.m in Sources */,
 				269F84141CF0488B00B9D75F /* AppDelegate.m in Sources */,
+				269F84531CF1EFB100B9D75F /* JXThreeController.m in Sources */,
 				269F84441CF049D700B9D75F /* JXNavController.m in Sources */,
+				269F84561CF1EFB800B9D75F /* JXFourController.m in Sources */,
+				269F845F1CF1EFD800B9D75F /* JXSevenController.m in Sources */,
 				269F844A1CF04F0A00B9D75F /* UIView+Frame.m in Sources */,
 				269F84111CF0488B00B9D75F /* main.m in Sources */,
 			);
