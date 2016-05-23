@@ -15,6 +15,7 @@
 #import "JXSixController.h"
 #import "JXSevenController.h"
 #import "UIView+Frame.h"
+#import "JXLabel.h"
 @interface JXMainController ()<UIScrollViewDelegate>
 /** 标题栏 */
 @property (nonatomic,weak) UIScrollView * titleScrollView;
@@ -29,10 +30,10 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self setupAddChilds];
     [self setupTitleVc];
-    [self setupContentVc];
     
     // 直接默认显示第一个
     [self scrollViewDidEndScrollingAnimation:self.contentVc];
+    [self scrollViewDidScroll:self.contentVc];
 }
 
 #pragma mark - 创建页面
@@ -48,47 +49,29 @@
     CGFloat x = 0;
     CGFloat y = 0;
     for (NSInteger i = 0; i<count; i++) {
-        UILabel * label = [[UILabel alloc] init];
+        JXLabel * label = [[JXLabel alloc] init];
         x = i * width;
         label.frame = CGRectMake(x, y, width, height);
-        label.textAlignment = NSTextAlignmentCenter;
-        label.userInteractionEnabled = YES;
         // 取出当前控制器的title，命名导航栏
         label.text = [self.childViewControllers[i] title];
+        
         // label添加tag值
         label.tag = i;
         // label添加点按手势
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
         [label addGestureRecognizer:tap];
-        label.backgroundColor = [self randColor];
+        label.backgroundColor = [UIColor lightGrayColor];
         [self.titleScrollView addSubview:label];
     }
     self.titleScrollView.contentSize = CGSizeMake(count * width, 0);
     self.titleScrollView.showsHorizontalScrollIndicator = NO;
+    self.titleScrollView.showsVerticalScrollIndicator = NO;
     
     // 设置内容视图的大小
     self.contentVc.contentSize = CGSizeMake(count * self.view.width, 0);
     
 }
-/**
- *  创建内容界面
- */
-- (void)setupContentVc {
-    UISwitch * sw = [[UISwitch alloc] init];
-    sw.center = self.view.center;
-    [self.contentVc addSubview:sw];
-    
-    
-    UISwitch * sw2 = [[UISwitch alloc] init];
-    sw2.centerX = 90;
-    sw2.centerY = 300;
-    [self.contentVc addSubview:sw2];
-    
-    UISwitch * sw3 = [[UISwitch alloc] init];
-    sw3.centerX = 500;
-    sw3.centerY = 300;
-    [self.contentVc addSubview:sw3];
-}
+
 /**
  *  点击事件
  */
@@ -151,7 +134,7 @@
         UIScrollView * contentScrollView = [[UIScrollView alloc] init];
         contentScrollView.frame = CGRectMake(0, 94, self.view.width, self.view.height - 94);
         [self.view addSubview:contentScrollView];
-        contentScrollView.backgroundColor = [UIColor orangeColor];
+        contentScrollView.backgroundColor = [UIColor lightGrayColor];
         contentScrollView.pagingEnabled = YES;
         contentScrollView.delegate = self;
         _contentVc = contentScrollView;
@@ -180,6 +163,22 @@
     // 取出当前控制器
     UIViewController * willShowVc = self.childViewControllers[index];
     
+    // 上下控制器相关联
+    // 取出当前label
+    JXLabel * currentLabel = self.titleScrollView.subviews[index];
+    // 取出当前的偏移量
+    CGPoint titleContentOffset = self.titleScrollView.contentOffset;
+    // 设置偏移x
+    titleContentOffset.x = currentLabel.centerX - scrollView.width * 0.5;
+    // 当偏移量小于0的时候说明偏移到最左边，
+    if (titleContentOffset.x < 0) titleContentOffset.x = 0;
+    // 最右边偏移
+    CGFloat maxContentOffsetX = self.titleScrollView.contentSize.width - self.view.width;
+    if (titleContentOffset.x > maxContentOffsetX) titleContentOffset.x = maxContentOffsetX;
+    [self.titleScrollView setContentOffset:titleContentOffset animated:YES];
+    
+    
+    
     // 如果当前控制器已经显示过了，我们就不需要再次进行计算它的frame，可以直接返回
     if ([willShowVc isViewLoaded]) return;
     
@@ -189,5 +188,20 @@
     // 计算控制器view的frame
     willShowVc.view.frame = CGRectMake(scrollView.contentOffset.x, 0, scrollView.width, scrollView.height);
     [self.contentVc addSubview:willShowVc.view];
+}
+
+// 当滑动的时候调用,计算偏移颜色
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat offset = scrollView.contentOffset.x / scrollView.width;
+    NSInteger index = offset;
+    // 左边label
+    JXLabel * leftLabel = self.titleScrollView.subviews[index];
+    CGFloat leftScale = offset - index;
+    leftLabel.scale = leftScale;
+    
+    // 右边label
+    JXLabel * rightLabel = (index == self.titleScrollView.subviews.count - 1) ? nil : self.titleScrollView.subviews[index + 1];
+    CGFloat rightScale = 1 - leftScale;
+    rightLabel.scale = rightScale;
 }
 @end
